@@ -6,6 +6,8 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 export function NxWelcome({ title }) {
+  const apiUrl = process.env.NX_API_URL;
+  const nxPlugin = process.env.NX_PLUGIN;
   return (
     <>
       <style
@@ -420,6 +422,22 @@ export function NxWelcome({ title }) {
               <span> Hello there, </span>
               Welcome {title} 👋
             </h1>
+            <h2
+              style={{
+                margin: '12px 0px 0px 0px'
+              }}
+            >
+              <a 
+                href={apiUrl}
+                style={{
+                  padding: '12px 6px',
+                  borderRadius: '12px',
+                  boxShadow: '1px 1px 1px black',
+                }}
+                >
+                  Link to the site
+              </a>
+            </h2>
           </div>
 
           <div id="hero" className="rounded">
@@ -645,7 +663,7 @@ export function NxWelcome({ title }) {
               <a
                 id="nx-console"
                 className="button-pill rounded shadow"
-                href="https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console&utm_source=nx-project"
+                href={nxPlugin}
                 target="_blank"
                 rel="noreferrer"
               >
